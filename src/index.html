@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="webcomponents/webcomponents-loader.js"></script>
+  <title>Example of Webcomponent</title>
+</head>
+
+<body>
+  <fukuro-jumbotron>
+    <h1 slot="header">Such Jumbotron</h1>
+    <p slot="subtitle">Very wow. Much generic.</p>
+  </fukuro-jumbotron>
+  <br /><br />
+  <div style="width:50%;margin:auto;">
+    <fukuro-card>
+      <h1>Form</h1>
+      <fukuro-input type="text" placeholder="First Name"></fukuro-input>
+      <fukuro-button onclick="alert('Form submitted!');">
+        Submit
+      </fukuro-button>
+    </fukuro-card>
+  </div>
+</body>
+
+</html>
