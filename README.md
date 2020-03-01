@@ -53,4 +53,4 @@ npm run build:esnext
 
 ## Screenshots
 ![Screenshot 1](/ss1.PNG?raw=true)
-![Screenshot 2](/ss.PNG?raw=true)
+![Screenshot 2](/ss2.PNG?raw=true)
