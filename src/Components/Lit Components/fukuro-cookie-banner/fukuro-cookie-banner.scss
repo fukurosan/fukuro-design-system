@@ -1,0 +1,13 @@
+@import "../../../Assets/Stylesheets/variables.scss";
+
+#container {
+  padding-top: 10px;
+  border-top: 1px solid lightgray;
+  height: 100px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  text-align: center;
+}

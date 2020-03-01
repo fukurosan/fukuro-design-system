@@ -1,0 +1,248 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "fukuro-accordion",
+      "description": "A accordion component",
+      "attributes": [
+        {
+          "name": "title",
+          "description": "The text printed on the accordion button row. This attribute will never update.",
+          "type": "string"
+        }
+      ],
+      "slots": [
+        {
+          "name": "",
+          "description": "This is the slot for the content inside of the accordion."
+        }
+      ]
+    },
+    {
+      "name": "fukuro-card",
+      "description": "A card component",
+      "slots": [
+        {
+          "name": "",
+          "description": "This is the slot for the content inside of the card."
+        }
+      ]
+    },
+    {
+      "name": "fukuro-dropdown",
+      "description": "A searchable dropdown component. Works similar to a <select> with <option> elements that populate it.",
+      "slots": [
+        {
+          "name": "",
+          "description": "This is a slot for the HTMLOptionElement children."
+        }
+      ]
+    },
+    {
+      "name": "fukuro-jumbotron",
+      "description": "A jumbotron component",
+      "attributes": [
+        {
+          "name": "header",
+          "description": "The header text of the element.",
+          "type": "string"
+        },
+        {
+          "name": "subtitle",
+          "description": "The subtitle text of the element.",
+          "type": "string"
+        }
+      ],
+      "slots": [
+        {
+          "name": "header",
+          "description": "This is a slot for the header content."
+        },
+        {
+          "name": "subtitle",
+          "description": "This is a slot for the subtitle content."
+        }
+      ]
+    },
+    {
+      "name": "fukuro-list-group",
+      "description": "A showcase of how to use the data-for (or sometimes data-name) pattern for component composition.",
+      "slots": [
+        {
+          "name": "",
+          "description": "The default slot is used for buttons and paragraphs where the data-for attribute on the paragraph elements should match the name attribute on the buttons."
+        }
+      ]
+    },
+    {
+      "name": "fukuro-list-group-nested",
+      "description": "A showcase of how to use an event pattern for component composition.",
+      "slots": [
+        {
+          "name": "",
+          "description": "The default slot is used for fukuro-list-group-item elements."
+        }
+      ]
+    },
+    {
+      "name": "fukuro-list-group-item",
+      "description": "A showcase of how to use an event pattern for component composition.",
+      "events": [
+        {
+          "name": "list_group_item_clicked",
+          "description": "This event is fired when the element is clicked."
+        }
+      ]
+    },
+    {
+      "name": "fukuro-cookie-banner",
+      "description": "A banner at the bottom of the screen with an accept and reject button! Ask whatever question you want and capture the event on accept/reject.",
+      "attributes": [
+        {
+          "name": "question",
+          "type": "string",
+          "default": "\"N/A\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "text",
+          "attribute": "question",
+          "type": "string",
+          "default": "\"N/A\""
+        }
+      ],
+      "events": [
+        {
+          "name": "accept",
+          "description": "This event is fired when the accept button is clicked."
+        },
+        {
+          "name": "reject",
+          "description": "This event is fired when the reject button is clicked."
+        }
+      ]
+    },
+    {
+      "name": "fukuro-tooltip-ts",
+      "description": "A tooltip that can target any CSS selector in its document.",
+      "attributes": [
+        {
+          "name": "text",
+          "type": "string",
+          "default": "\"You forgot to set a tooltip text!\""
+        },
+        {
+          "name": "data-for",
+          "type": "string",
+          "default": "\"NO TARGET\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "tooltipText",
+          "attribute": "text",
+          "type": "string",
+          "default": "\"You forgot to set a tooltip text!\""
+        },
+        {
+          "name": "target",
+          "attribute": "data-for",
+          "type": "string",
+          "default": "\"NO TARGET\""
+        }
+      ]
+    },
+    {
+      "name": "fukuro-lit-lifecycle",
+      "description": "This component shows off the lit lifecycle.",
+      "attributes": [
+        {
+          "name": "number",
+          "description": "The prop representing the number attribute internally.",
+          "type": "number",
+          "default": "0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "value",
+          "attribute": "number",
+          "description": "The prop representing the number attribute internally.",
+          "type": "number",
+          "default": "0"
+        }
+      ]
+    },
+    {
+      "name": "fukuro-button",
+      "description": "An extended native button with custom styles."
+    },
+    {
+      "name": "fukuro-ul",
+      "description": "An extended native ul with custom functionality for nested uls.\r\nAny uls placed inside the custom ul will be imploded by default, and explode on click."
+    },
+    {
+      "name": "fukuro-tooltip",
+      "attributes": [
+        {
+          "name": "tooltipVisible",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "default": "\"You forgot to set a tooltip text!\""
+        },
+        {
+          "name": "data-for",
+          "type": "string",
+          "default": "\"NO TARGET\""
+        },
+        {
+          "name": "x",
+          "type": "number",
+          "default": "0"
+        },
+        {
+          "name": "y",
+          "type": "number",
+          "default": "0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "tooltipVisible",
+          "attribute": "tooltipVisible",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "tooltipText",
+          "attribute": "text",
+          "type": "string",
+          "default": "\"You forgot to set a tooltip text!\""
+        },
+        {
+          "name": "target",
+          "attribute": "data-for",
+          "type": "string",
+          "default": "\"NO TARGET\""
+        },
+        {
+          "name": "x",
+          "attribute": "x",
+          "type": "number",
+          "default": "0"
+        },
+        {
+          "name": "y",
+          "attribute": "y",
+          "type": "number",
+          "default": "0"
+        }
+      ]
+    }
+  ]
+}

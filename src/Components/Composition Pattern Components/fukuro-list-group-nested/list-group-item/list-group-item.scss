@@ -1,0 +1,6 @@
+@import "../../../../Assets/Stylesheets/variables.scss";
+@import "../../../../Assets/Stylesheets/Components/button.scss";
+
+button {
+  @extend %button;
+}

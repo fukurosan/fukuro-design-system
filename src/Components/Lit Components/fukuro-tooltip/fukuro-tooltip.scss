@@ -1,0 +1,13 @@
+@import "../../../Assets/Stylesheets/variables.scss";
+
+.tooltip {
+  display: none;
+  position:fixed; 
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 1em;
+}
+
+.visible {
+  display: block;
+}

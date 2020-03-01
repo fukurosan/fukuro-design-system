@@ -1,0 +1,23 @@
+@import "../../../Assets/Stylesheets/variables.scss";
+@import "../../../Assets/Stylesheets/Components/button.scss";
+
+#container {
+  width: 100%;
+  display: flex;
+}
+
+#button-list {
+  list-style: none;
+  padding: 0;
+}
+
+#right {
+  flex: auto;
+  margin-left: 1em;
+  padding-left: 1em;
+  border-left: 1px solid lightgray;
+}
+
+button {
+  @extend %button;
+}
