@@ -2,7 +2,7 @@ import { html } from "lit-element"
 import { withKnobs, text, boolean, number, date, color, object, array } from "@storybook/addon-knobs"
 import { withWebComponentsKnobs } from "storybook-addon-web-components-knobs"
 import { withHTML } from "@whitespace/storybook-addon-html/html"
-import "../../Components/Vanilla Components/fukuro-dropdown/dropdown"
+import "../../Components/Vanilla Components/fukuro-dropdown/fukuro-dropdown"
 
 export default {
   title: "Vanilla Web Components|fukuro-dropdown",

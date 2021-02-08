@@ -136,6 +136,20 @@
           "name": "data-for",
           "type": "string",
           "default": "\"NO TARGET\""
+        },
+        {
+          "name": "targetElement",
+          "type": "Element | null"
+        },
+        {
+          "name": "toggleTooltipRef",
+          "type": "() => void",
+          "default": "\"() => this.toggleTooltip()\""
+        },
+        {
+          "name": "MoveTooltipRef",
+          "type": "(e: MouseEvent) => void",
+          "default": "\"(e: MouseEvent) => this.MoveTooltip(e)\""
         }
       ],
       "properties": [
@@ -150,6 +164,23 @@
           "attribute": "data-for",
           "type": "string",
           "default": "\"NO TARGET\""
+        },
+        {
+          "name": "targetElement",
+          "attribute": "targetElement",
+          "type": "Element | null"
+        },
+        {
+          "name": "toggleTooltipRef",
+          "attribute": "toggleTooltipRef",
+          "type": "() => void",
+          "default": "\"() => this.toggleTooltip()\""
+        },
+        {
+          "name": "MoveTooltipRef",
+          "attribute": "MoveTooltipRef",
+          "type": "(e: MouseEvent) => void",
+          "default": "\"(e: MouseEvent) => this.MoveTooltip(e)\""
         }
       ]
     },
@@ -180,7 +211,7 @@
     },
     {
       "name": "fukuro-ul",
-      "description": "An extended native ul with custom functionality for nested uls.\r\nAny uls placed inside the custom ul will be imploded by default, and explode on click."
+      "description": "An extended native ul with custom functionality for nested uls.\nAny uls placed inside the custom ul will be imploded by default, and explode on click."
     },
     {
       "name": "fukuro-tooltip",

@@ -2,7 +2,7 @@ import { html } from "lit-element"
 import { withKnobs, text, boolean, number, date, color, object, array } from "@storybook/addon-knobs"
 import { withWebComponentsKnobs } from "storybook-addon-web-components-knobs"
 import { withHTML } from "@whitespace/storybook-addon-html/html"
-import "../../Components/Composition Pattern Components/fukuro-list-group-datafor/list-group"
+import "../../Components/Composition Pattern Components/fukuro-list-group-datafor/fukuro-list-group"
 
 export default {
   title: "Composition Patterns|data-for/fukuro-list-group",

@@ -2,8 +2,8 @@ import { html } from "lit-element"
 import { withKnobs } from "@storybook/addon-knobs"
 import { withWebComponentsKnobs } from "storybook-addon-web-components-knobs"
 import { withHTML } from "@whitespace/storybook-addon-html/html"
-import "../../Components/Composition Pattern Components/fukuro-list-group-nested/list-group/list-group"
-import "../../Components/Composition Pattern Components/fukuro-list-group-nested/list-group-item/list-group-item"
+import "../../Components/Composition Pattern Components/fukuro-list-group-nested/list-group/fukuro-list-group-nested"
+import "../../Components/Composition Pattern Components/fukuro-list-group-nested/list-group-item/fukuro-list-group-item"
 
 export default {
   title: "Composition Patterns|events/fukuro-list-group-parent",

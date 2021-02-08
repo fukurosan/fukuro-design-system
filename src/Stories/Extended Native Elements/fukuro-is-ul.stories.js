@@ -1,6 +1,6 @@
 import { html } from "lit-element"
 import { withHTML } from "@whitespace/storybook-addon-html/html"
-import "../../Components/Extended Native Components/fukuro-is-ul/isUl"
+import "../../Components/Extended Native Components/fukuro-is-ul/fukuro-ul"
 
 export default {
   title: "Extended Native Elements|fukuro-expandable-ul",

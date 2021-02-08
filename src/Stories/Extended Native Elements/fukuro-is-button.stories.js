@@ -1,7 +1,7 @@
 import { html } from "lit-element"
 import { withKnobs, text, boolean, number, date, color, object, array } from "@storybook/addon-knobs"
 import { withHTML } from "@whitespace/storybook-addon-html/html"
-import "../../Components/Extended Native Components/fukuro-is-button/isButton"
+import "../../Components/Extended Native Components/fukuro-is-button/fukuro-button"
 
 export default {
   title: "Extended Native Elements|fukuro-button",
