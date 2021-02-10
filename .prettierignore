@@ -1,4 +1,6 @@
 dist
 node_modules
 .storybook
+__tests__
 src/Stories
+*.test.js

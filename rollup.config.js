@@ -10,6 +10,7 @@ import copy from "rollup-plugin-copy"
 import bundleSize from "rollup-plugin-bundle-size"
 
 const DIST_FOLDER = "dist"
+const TEST_FOLDER = "__tests__"
 const LIBRARY_NAME = "fukurowc"
 const VERSION = pkg.version
 const AUTHOR = pkg.author
@@ -60,6 +61,38 @@ const POST_PROCESSOR_PLUGINS = [
 	}),
 	bundleSize()
 ]
+
+const testBuilds = []
+if (process.env.TEST) {
+	testBuilds.push({
+		input: bundles.bundle,
+		output: [
+			{
+				file: `${TEST_FOLDER}/bundle/${LIBRARY_NAME}-bundle.mjs`,
+				format: "esm",
+				banner: BANNER
+			}
+		],
+		external: [Object.keys(GLOBALS)],
+		plugins: [
+			...PRE_PROCESSOR_PLUGINS,
+			babel({
+				exclude: "node_modules/**",
+				extensions: [".ts"],
+				babelHelpers: "bundled",
+				babelrc: false,
+				presets: [
+					"@babel/preset-typescript"
+				],
+				plugins: [
+					["@babel/plugin-proposal-decorators", { legacy: true }],
+					"@babel/plugin-proposal-class-properties"
+				]
+			}),
+			...POST_PROCESSOR_PLUGINS
+		]
+	})
+}
 
 let esmBuilds = []
 if (process.env.ESM) {
@@ -163,23 +196,26 @@ if (process.env.ESNEXT) {
 	})
 }
 
-const finalizationConfig = {
-	input: "./.storybook/main.js", //Any random file will do. We are just leveraging rollup to run the plugins
-	plugins: [
-		copy({
-			targets: [
-				{ src: "node_modules/@ungap/custom-elements-builtin/min.js", dest: `${DIST_FOLDER}/polyfills/builtins` },
-				{ src: "node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js", dest: `${DIST_FOLDER}/polyfills/webcomponents` },
-				{ src: "node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js", dest: `${DIST_FOLDER}/polyfills/webcomponents` },
-				{ src: "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js", dest: `${DIST_FOLDER}/polyfills/webcomponents` },
-				{ src: "node_modules/@webcomponents/webcomponentsjs/bundles/webcomponents-ce.js", dest: `${DIST_FOLDER}/polyfills/webcomponents/bundles` },
-				{ src: "node_modules/@webcomponents/webcomponentsjs/bundles/webcomponents-sd-ce-pf.js", dest: `${DIST_FOLDER}/polyfills/webcomponents/bundles` },
-				{ src: "node_modules/@webcomponents/webcomponentsjs/bundles/webcomponents-sd-ce.js", dest: `${DIST_FOLDER}/polyfills/webcomponents/bundles` },
-				{ src: "node_modules/@webcomponents/webcomponentsjs/bundles/webcomponents-sd.js", dest: `${DIST_FOLDER}/polyfills/webcomponents/bundles` },
-				{ src: "src/custom-elements.json", dest: `${DIST_FOLDER}/documentation` }
-			]
-		})
-	]
+const finalizationConfig = []
+if (process.env.POLYFILL) {
+	finalizationConfig.push({
+		input: "./.storybook/main.js", //Any random file will do. We are just leveraging rollup to run the plugins
+		plugins: [
+			copy({
+				targets: [
+					{ src: "node_modules/@ungap/custom-elements-builtin/min.js", dest: `${DIST_FOLDER}/polyfills/builtins` },
+					{ src: "node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js", dest: `${DIST_FOLDER}/polyfills/webcomponents` },
+					{ src: "node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js", dest: `${DIST_FOLDER}/polyfills/webcomponents` },
+					{ src: "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js", dest: `${DIST_FOLDER}/polyfills/webcomponents` },
+					{ src: "node_modules/@webcomponents/webcomponentsjs/bundles/webcomponents-ce.js", dest: `${DIST_FOLDER}/polyfills/webcomponents/bundles` },
+					{ src: "node_modules/@webcomponents/webcomponentsjs/bundles/webcomponents-sd-ce-pf.js", dest: `${DIST_FOLDER}/polyfills/webcomponents/bundles` },
+					{ src: "node_modules/@webcomponents/webcomponentsjs/bundles/webcomponents-sd-ce.js", dest: `${DIST_FOLDER}/polyfills/webcomponents/bundles` },
+					{ src: "node_modules/@webcomponents/webcomponentsjs/bundles/webcomponents-sd.js", dest: `${DIST_FOLDER}/polyfills/webcomponents/bundles` },
+					{ src: "src/custom-elements.json", dest: `${DIST_FOLDER}/documentation` }
+				]
+			})
+		]
+	})
 }
 
-export default [...esmBuilds, ...wwwBuilds, ...esnextBuilds, finalizationConfig]
+export default [...esmBuilds, ...wwwBuilds, ...esnextBuilds, ...testBuilds, ...finalizationConfig]
